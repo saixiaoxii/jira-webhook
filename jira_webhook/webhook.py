@@ -151,6 +151,7 @@ class JiraWebhook(object):
         }
 
         for hook in (self._hooks[event_type]):
+            # 修改 data 为 filtered_data 即可看到优化后的返回内容
             hook(data)
 
         return "", 200
